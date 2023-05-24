@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "email": "persona1@email.com",
+        "firstName": "Persona",
+        "lastName": "Uno"
+    },
+    {
+        "id": "2",
+        "email": "persona2@email.com",
+        "firstName": "Persona",
+        "lastName": "Dos"
+    },
+    {
+        "id": "3",
+        "email": "persona3@email.com",
+        "firstName": "Persona",
+        "lastName": "Tres"
+    },
+    {
+        "id": "4",
+        "email": "persona4@email.com",
+        "firstName": "Persona",
+        "lastName": "Cuatro"
+    },
+    {
+        "id": "5",
+        "email": "persona5@email.com",
+        "firstName": "Persona",
+        "lastName": "Cinco"
+    },
+    {
+        "id": "6",
+        "email": "persona6@email.com",
+        "firstName": "Persona",
+        "lastName": "Seis"
+    },
+    {
+        "id": "7",
+        "email": "persona7@email.com",
+        "firstName": "Persona",
+        "lastName": "Siete"
+    },
+    {
+        "id": "8",
+        "email": "persona8@email.com",
+        "firstName": "Persona",
+        "lastName": "Ocho"
+    },
+    {
+        "id": "9",
+        "email": "persona9@email.com",
+        "firstName": "Persona",
+        "lastName": "Nueve"
+    },
+    {
+        "id": "10",
+        "email": "persona10@email.com",
+        "firstName": "Persona",
+        "lastName": "Diez"
+    }
+]
