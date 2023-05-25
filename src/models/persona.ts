@@ -1,14 +1,15 @@
-import { Model, DataTypes, BuildOptions } from 'sequelize';
+// models/persona.ts
+import { BuildOptions, DataTypes } from 'sequelize';
 import { sequelize } from '../lib/db';
+import { BaseModel, BaseStatic } from './base-model';
 
-export interface PersonaModel extends Model {
-  readonly id: string;
+export interface PersonaModel extends BaseModel {
   readonly email: string;
   readonly firstName: string;
   readonly lastName: string;
 }
 
-export type PersonaStatic = typeof Model & {
+export type PersonaStatic = BaseStatic & {
   new (values?: object, options?: BuildOptions): PersonaModel;
 };
 
@@ -41,6 +42,5 @@ const Persona = <PersonaStatic>sequelize.define('personas', {
 }, {
   timestamps: false,
 });
-
 
 export default Persona;

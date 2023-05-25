@@ -1,71 +1,17 @@
 // controllers/persona-controller.ts
-import { NextFunction, Request, Response } from 'express';
-
+import BaseController from './base-controller';
 import personaService from '../services/persona-service';
+import { PersonaModel } from '../models/persona';
 
-const create = async (request: Request, response: Response, next: NextFunction) => {
-  try {
-    const { body } = request;
-
-    const persona = await personaService.create(body);
-
-    return response.status(201).send(persona);
-  } catch (error) {
-    return next(error);
+class PersonaController extends BaseController<PersonaModel> {
+  constructor() {
+    super(personaService);
+    this.create = this.create.bind(this);
+    this.fetch = this.fetch.bind(this);
+    this.list = this.list.bind(this);
+    this.remove = this.remove.bind(this);
+    this.update = this.update.bind(this);
   }
-};
+}
 
-const fetch = async (request: Request, response: Response, next: NextFunction) => {
-  try {
-    const { id } = request.params;
-
-    const persona = await personaService.fetch(id as string);
-
-    return response.status(200).send(persona);
-  } catch (error) {
-    return next(error);
-  }
-};
-
-const list = async (request: Request, response: Response, next: NextFunction) => {
-  try {
-    const personas = await personaService.list();
-
-    return response.status(200).send(personas);
-  } catch (error) {
-    return next(error);
-  }
-};
-
-const remove = async (request: Request, response: Response, next: NextFunction) => {
-  try {
-    const { id } = request.params;
-
-    await personaService.remove(id as string);
-
-    return response.status(204).end();
-  } catch (error) {
-    return next(error);
-  }
-};
-
-const update = async (request: Request, response: Response, next: NextFunction) => {
-  try {
-    const { id } = request.params;
-    const { body } = request;
-
-    const persona = await personaService.update(id as string, body);
-
-    return response.status(200).send(persona);
-  } catch (error) {
-    return next(error);
-  }
-};
-
-export default {
-  create,
-  fetch,
-  list,
-  remove,
-  update,
-};
+export default new PersonaController();
