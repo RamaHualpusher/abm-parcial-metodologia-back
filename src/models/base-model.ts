@@ -2,7 +2,7 @@
 import { Model, DataTypes, BuildOptions } from 'sequelize';
 
 export interface BaseModel extends Model {
-  readonly id: string;
+  readonly id: number;
 }
 
 export type BaseStatic = typeof Model & {

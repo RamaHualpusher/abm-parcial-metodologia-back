@@ -9,14 +9,16 @@ export interface PersonaModel extends BaseModel {
   readonly lastName: string;
 }
 
+
 export type PersonaStatic = BaseStatic & {
   new (values?: object, options?: BuildOptions): PersonaModel;
 };
 
 const Persona = <PersonaStatic>sequelize.define('personas', {
   id: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,  // Cambia esto a INTEGER
     primaryKey: true,
+    autoIncrement: true,  // Agrega esto
   },
   email: {
     type: DataTypes.STRING,
@@ -42,5 +44,6 @@ const Persona = <PersonaStatic>sequelize.define('personas', {
 }, {
   timestamps: false,
 });
+
 
 export default Persona;
